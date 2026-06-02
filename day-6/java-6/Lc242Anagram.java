@@ -16,7 +16,7 @@ class SolutionAna{
         return Arrays.equals(a, b);
     }
 }
-public class Anagram {
+public class Lc242Anagram {
     public static void main(String[] args){
         String s="anagram";
         String t="nagaram";
