@@ -1,5 +1,5 @@
 import java.util.*;
-class Solution128 {
+class Solution128{
     public int longestConsecutive(int[] nums) {
         Arrays.sort(nums);
         int sum=0;
