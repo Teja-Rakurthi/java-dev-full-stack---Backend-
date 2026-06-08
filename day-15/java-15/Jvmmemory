@@ -1,0 +1,60 @@
+
+
+                JVM MEMORY MODEL
+
+        +-------------------------+
+        |        STACK            |
+        |-------------------------|
+main()  | str ------------------+ |
+        | arr ----------------+ | |
+        | local vars          | | |
+        +---------------------|-|-+
+                              | |
+                              | |
+                              v v
+
+        +-------------------------+
+        |         HEAP            |
+        |-------------------------|
+        | String object "hello"   | <---- str reference
+        |                         |
+        | int[] {1,2,3}           | <---- arr reference
+        |                         |
+        +-------------------------+
+
+        +-------------------------+
+        |      METHOD AREA        |
+        |-------------------------|
+        | static int count        |
+        | Class metadata          |
+        +-------------------------+
+
+example code:
+class Demo {
+
+    static int count = 10;
+
+    public static void main(String[] args) {
+
+        String str = "hello";
+
+        int[] arr = {1,2,3};
+
+    }
+}
+
+2.When does an object become GC eligible?
+
+An object becomes eligible for Garbage Collection when no references point to it.
+
+Another example:
+
+int[] arr = new int[5];
+
+arr = new int[10];
+
+Old array object becomes unreachable → GC eligible
+
+Interview One-Line Answer
+
+“Objects become eligible for GC when they are unreachable (zero live references).”
